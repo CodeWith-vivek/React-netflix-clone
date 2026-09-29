@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
-import search_icon from "../../assets/search_icon.svg";
-import bell_icon from "../../assets/bell_icon.svg";
-import profile_img from "../../assets/profile_img.png";
-import caret_icon from "../../assets/caret_icon.svg";
-import menu_icon from "../../assets/menu.png"; 
-import { logout } from "../../config/firebase";
+import logo from "@/assets/images/logo.png";
+import search_icon from "@/assets/icons/search_icon.svg";
+import bell_icon from "@/assets/icons/bell_icon.svg";
+import profile_img from "@/assets/images/profile_img.png";
+import caret_icon from "@/assets/icons/caret_icon.svg";
+import menu_icon from "@/assets/icons/menu.png"; 
+import { logout } from "@/features/auth/services/authService";
 
 const Navbar = () => {
   const navRef = useRef();

@@ -1,12 +1,12 @@
 import React from 'react'
 import './Home.css'
-import Navbar from '../../components/Navbar/Navbar'
-import hero_banner from "../../assets/hero_banner.jpg"
-import hero_title from "../../assets/hero_title.png"
-import play_icon from "../../assets/play_icon.png"
-import info_icon from "../../assets/info_icon.png";
-import TitleCards from '../../components/TitleCards/TitleCards'
-import Footer from '../../components/Footer/Footer'
+import Navbar from '@/components/layout/Navbar/Navbar'
+import hero_banner from "@/assets/images/hero_banner.jpg"
+import hero_title from "@/assets/images/hero_title.png"
+import play_icon from "@/assets/icons/play_icon.png"
+import info_icon from "@/assets/icons/info_icon.png";
+import TitleCards from '@/features/movies/components/TitleCards/TitleCards'
+import Footer from '@/components/layout/Footer/Footer'
 
 
 const Home = () => {
