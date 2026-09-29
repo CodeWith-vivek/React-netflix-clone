@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Home from "./pages/Home/Home";
+import Home from "@/pages/Home/Home";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import Login from "./pages/Login/Login";
-import Player from "./pages/Player/Player";
+import Login from "@/pages/Login/Login";
+import Player from "@/pages/Player/Player";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./config/firebase";
+import { auth } from "@/lib/firebase";
 import { ToastContainer } from "react-toastify";
-import netflix_spinner from "./assets/netflix_spinner.gif";
+import Spinner from "@/components/ui/Spinner/Spinner";
 
 const App = () => {
   const navigate = useNavigate();
@@ -29,11 +29,7 @@ const App = () => {
   }, [navigate, location.pathname]);
 
   if (loading) {
-    return (
-      <div className="login-spinner">
-        <img src={netflix_spinner} alt="Loading..." />
-      </div>
-    );
+    return <Spinner />;
   }
 
   return (

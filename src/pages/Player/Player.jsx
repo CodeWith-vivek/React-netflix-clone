@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Player.css"
-import back_arrow_icon from "../../assets/back_arrow_icon.png"
-import axios from 'axios'
+import back_arrow_icon from "@/assets/icons/back_arrow_icon.png"
 import { useNavigate, useParams } from 'react-router-dom'
+import { getMovieVideos } from '@/features/movies/services/movieService'
 
 const Player = () => {
 
@@ -17,23 +17,12 @@ const Player = () => {
         type:""
     })
 
-    const options = {
-      method: "GET",
-      url: `https://api.themoviedb.org/3/movie/${id}/videos`,
-      params: { language: "en-US" },
-      headers: {
-        accept: "application/json",
-   Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
-      },
-    };
-
     useEffect(()=>{
 
-        axios
-          .request(options)
-          .then((res) => setApiData(res.data.results[0]))
+        getMovieVideos(id)
+          .then((results) => setApiData(results[0]))
           .catch((err) => console.error(err));
-    },[])
+    },[id])
 
   return (
     <div className="player">

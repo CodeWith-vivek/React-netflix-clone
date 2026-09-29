@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import "./Login.css"
-import logo from "../../assets/logo.png"
-import { login,signup } from '../../config/firebase'
-import netflix_spinner from "../../assets/netflix_spinner.gif"
+import logo from "@/assets/images/logo.png"
+import { login,signup } from '@/features/auth/services/authService'
+import Spinner from "@/components/ui/Spinner/Spinner"
 
 const Login = () => {
 
@@ -26,9 +26,7 @@ const Login = () => {
     }
 
   return (
-    loading?<div className="login-spinner">
-        <img src={netflix_spinner} alt="" />
-    </div>:
+    loading?<Spinner />:
     <div className="login">
       <img src={logo} className="login-logo" alt="" />
       <div className="login-form">
